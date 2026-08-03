@@ -4,7 +4,8 @@ Static website for the **Ultrasonic Reactors** technology of the University of A
 (Research Results Transfer Office — OTRI). Migrated from the original WordPress site at
 `ultrasonicreactors.com` on 2026-08-03.
 
-Live site: https://ultrasonic-reactors.github.io/applications/
+Live site: https://ultrasonicreactors.com (custom domain; also served at
+https://ultrasonic-reactors.github.io/applications/)
 
 ## Structure
 
@@ -34,19 +35,17 @@ python3 -m http.server 8000
 
 Then open http://localhost:8000
 
-## Custom domain (optional)
+## Custom domain
 
-To serve the site at `ultrasonicreactors.com` instead of github.io:
+The site is served at `ultrasonicreactors.com` (cutover from WordPress on
+2026-08-03). DNS is on Cloudflare, records DNS-only (grey cloud, not proxied —
+GitHub needs this to issue the HTTPS certificate):
 
-1. In the repo: **Settings → Pages → Custom domain**, enter `ultrasonicreactors.com`
-   (this creates a `CNAME` file in the repo).
-2. At the DNS provider, point the domain to GitHub Pages:
-   - `A` records for the apex: `185.199.108.153`, `185.199.109.153`,
-     `185.199.110.153`, `185.199.111.153`
-   - `CNAME` record for `www` → `ultrasonic-reactors.github.io`
-3. Enable **Enforce HTTPS** once the certificate is issued.
-4. Update the "Back to home" link in `404.html` from `/applications/` to `/`
-   (the 404 page is self-contained and uses an absolute path).
+- `A` records for the apex → `185.199.108.153`, `185.199.109.153`,
+  `185.199.110.153`, `185.199.111.153` (plus the matching `AAAA` records)
+- `CNAME` `www` → `ultrasonic-reactors.github.io`
+- The custom domain is set in **Settings → Pages** (tracked by the `CNAME`
+  file in this repo); **Enforce HTTPS** should stay enabled.
 
 ## Notes on the migration
 
