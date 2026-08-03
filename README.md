@@ -45,6 +45,8 @@ To serve the site at `ultrasonicreactors.com` instead of github.io:
      `185.199.110.153`, `185.199.111.153`
    - `CNAME` record for `www` → `ultrasonic-reactors.github.io`
 3. Enable **Enforce HTTPS** once the certificate is issued.
+4. Update the "Back to home" link in `404.html` from `/applications/` to `/`
+   (the 404 page is self-contained and uses an absolute path).
 
 ## Notes on the migration
 
