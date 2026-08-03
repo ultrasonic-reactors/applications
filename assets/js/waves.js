@@ -15,8 +15,8 @@
 
   var SPEED = 340;       // wavefront speed, px/s
   var PULSES = 5;        // pulses per packet
-  var PULSE_GAP = 0.13;  // s between pulses in a packet (the "high frequency")
-  var PACKET_GAP = 3;    // s of silence between packets
+  var PULSE_GAP = 0.15;  // s between pulses in a packet (the "high frequency")
+  var PACKET_GAP = 10;    // s of silence between packets
   var LIFETIME = 5;       // s before a wavefront fades out completely
   var BASE_ALPHA = 0.45;  // peak line opacity
   var COLOR = "56, 189, 248";
